@@ -1,0 +1,31 @@
+﻿extends layout
+
+block content
+	div(id="experiment", style="width: 100%;")
+		h1 Heat Flow experiment
+		p 
+			img(src='/images/heatflow_quanser.jpg', alt='Heat Flow device QUANSER', width="500px")
+		p
+			input#on(type="button", value="Start", style="background: #00ff00;")
+			input#off(type="button", value="Stop", style="background: #ee3b3b;")
+			input(type="text", id="status", value="#{status}", style="display: none;")
+		h2 Parameters
+		p Fan Speed (RPM):
+			input(type="text", id="fanspeedfield", name="fan_speed", value="#{fan_speed}")
+			input#publishfanspeedup(type="button", value="+")
+			input#publishfanspeeddown(type="button", value="-")
+		p Heater Temperature (°C):
+			input(type="text", id="heatertempfield", name="heater_temp", value="#{heater_temp}")
+			input#publishheatertempup(type="button", value="+")
+			input#publishheatertempdown(type="button", value="-")
+	div(id="users")
+	br
+	div(id="charts")
+		h2 Results - Charts
+		div(id="chartfan", style="height: 300px; width: 100%;")
+		div(id="chartheater", style="height: 300px; width: 100%;")
+	br
+	a(href='/') Home
+	
+	script(type='text/javascript' src='/javascripts/canvasjs.min.js')
+	script(type='text/javascript' src='/javascripts/heatflow.js')

@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+var debug = require('debug')('ilabs');
+var app = require('../app');
+
+/*app.set('port', process.env.PORT || 3000);
+
+var server = app.listen(app.get('port'), function() {
+  debug('Express server started on http://localhost:' + app.get("port") + "; Press Ctrl+C to terminate");
+});*/
+

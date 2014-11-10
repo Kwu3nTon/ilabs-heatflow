@@ -1,0 +1,14 @@
+var led = 0;
+var percentageRPM = 300/500;
+analogWrite(B8,percentageRPM);
+var percentageTMP = 25/35;
+analogWrite(B9,percentageTMP);
+
+Serial1.setup(9600);
+send_temp = function() {
+	led = !led;
+	digitalWrite(LED1, led);
+	Serial1.println('S25');
+	Serial1.println('T15');
+};
+setInterval(send_temp,2000);

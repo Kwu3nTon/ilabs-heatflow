@@ -1,0 +1,4 @@
+digitalWrite(LED1,0);
+analogWrite(B8,0);
+analogWrite(B9,0);
+clearInterval();
